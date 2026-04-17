@@ -1,0 +1,30 @@
+{
+  "name": "Ghoomer.pk - Adventure Guides in Pakistan",
+  "description": "Pakistan's premier platform connecting adventurers with verified local guides for authentic treks, climbs, and cultural experiences. Book guides for K2 Base Camp, Hunza Valley, Fairy Meadows, and more.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera",
+    "notifications"
+  ],
+  "icon": "/icon-512x512.png",
+  "screenshots": [
+    "/screenshots/home.jpg",
+    "/screenshots/guides.jpg",
+    "/screenshots/booking.jpg"
+  ],
+  "categories": [
+    "travel",
+    "lifestyle",
+    "adventure"
+  ],
+  "keywords": [
+    "Pakistan travel",
+    "trekking guides",
+    "K2",
+    "Hunza",
+    "Skardu",
+    "adventure tourism",
+    "local guides",
+    "mountaineering"
+  ]
+}

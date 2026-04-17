@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+  
+  --color-primary: #0EA5E9;
+  --color-secondary: #10B981;
+  --color-accent: #F59E0B;
+  --color-dark: #0F172A;
+  --color-light: #F8FAFC;
+
+  --animate-slow-zoom: slow-zoom 20s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes slow-zoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.15); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar Utility */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300 dark:bg-slate-700;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-marker {
+  cursor: pointer;
+}
+
+/* Glassmorphism */
+.glass-card {
+  @apply bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-slate-800/50;
+}
+
+/* Gradients */
+.gradient-sunset { background: linear-gradient(135deg, #FF6B6B, #F59E0B, #10B981); }
+.gradient-mountain { background: linear-gradient(135deg, #0F172A, #1E293B, #0EA5E9); }
+.gradient-dawn { background: linear-gradient(135deg, #8B5CF6, #EC4899, #F59E0B); }
+.gradient-forest { background: linear-gradient(135deg, #059669, #10B981, #6EE7B7); }
+.gradient-ocean { background: linear-gradient(135deg, #0284C7, #0EA5E9, #7DD3FC); }
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-emerald-500;
+}
+
+/* 3D Card Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Shimmer Effect */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
